@@ -36,32 +36,60 @@ def get_clinton_tweets():
                         '796390484084215808')
 
 
-def get_kaine_tweets():
-    '''Gets Tim Kaine tweets either from the pickle file or
+def get_malley_tweets():
+    '''Gets Martin O'Malley tweets either from the pickle file or
     if that doesn't exist, the Twitter API'''
-    my_file = Path('kainetwitters.pickle')
+    my_file = Path('malleytwitters.pickle')
     if my_file.is_file():
         # Load data from a file (will be part of your data processing script)
-        input_file = open('kainetwitters.pickle', 'rb')
+        input_file = open('malleytwitters.pickle', 'rb')
         reloaded_copy_of_texts = pickle.load(input_file)
         return reloaded_copy_of_texts
     else:
-        retrieve_tweets('@SenKaineOffice', 'kainetwitters.pickle',
-                        '796431707901726720')
+        retrieve_tweets('@MartinOMalley', 'malleytwitters.pickle',
+                        '796261181006761984')
 
 
-def get_pence_tweets():
-    '''Gets MIke Pence tweets either from the pickle file or
+def get_bernie_tweets():
+    '''Gets Bernie Sanders' tweets either from the pickle file or
     if that doesn't exist, the Twitter API'''
-    my_file = Path('pencetwitter.pickle')
+    my_file = Path('bernietwitters.pickle')
     if my_file.is_file():
         # Load data from a file (will be part of your data processing script)
-        input_file = open('pencetwitters.pickle', 'rb')
+        input_file = open('bernietwitters.pickle', 'rb')
         reloaded_copy_of_texts = pickle.load(input_file)
         return reloaded_copy_of_texts
     else:
-        retrieve_tweets('@mike_pence', 'pencertwitter.pickle',
-                        '796185616383901697')
+        retrieve_tweets('@SenSanders', 'bernietwitters.pickle',
+                        '796785451713593344')
+
+
+def get_cruz_tweets():
+    '''Gets Ted Cruz's tweets either from the pickle file or
+    if that doesn't exist, the Twitter API'''
+    my_file = Path('cruztwitters.pickle')
+    if my_file.is_file():
+        # Load data from a file (will be part of your data processing script)
+        input_file = open('cruztwitters.pickle', 'rb')
+        reloaded_copy_of_texts = pickle.load(input_file)
+        return reloaded_copy_of_texts
+    else:
+        retrieve_tweets('@tedcruz', 'cruztwitters.pickle',
+                        '796263241890439169')
+
+
+def get_kasich_tweets():
+    '''Gets John Kasich's tweets either from the pickle file or
+    if that doesn't exist, the Twitter API'''
+    my_file = Path('kasichtwitters.pickle')
+    if my_file.is_file():
+        # Load data from a file (will be part of your data processing script)
+        input_file = open('kasichtwitters.pickle', 'rb')
+        reloaded_copy_of_texts = pickle.load(input_file)
+        return reloaded_copy_of_texts
+    else:
+        retrieve_tweets('@JohnKasich', 'kasichtwitters.pickle',
+                        '796033355036983301')
 
 
 def retrieve_tweets(name, filename, idnum):
@@ -87,5 +115,7 @@ def retrieve_tweets(name, filename, idnum):
 
 get_trump_tweets()
 get_clinton_tweets()
-get_kaine_tweets()
-get_pence_tweets()
+get_cruz_tweets()
+get_bernie_tweets()
+get_malley_tweets()
+get_kasich_tweets()
