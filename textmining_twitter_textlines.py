@@ -1,3 +1,7 @@
+"""created by Minju Kang
+    this code pickles presidential candidate's twitter data up to the november 18th,
+    the election day. """
+
 import twitter
 import pickle
 from pathlib import Path
